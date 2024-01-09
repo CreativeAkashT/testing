@@ -2,6 +2,6 @@ deployment:
   tasks:
     - export DEPLOYPATH=/home/nivi9506/public_html/testing
     - php -r "file_exists('.env') || copy('.env.example', '.env');"
-    - composer install -q --no-ansi --no-interaction --no-scripts --no-progress --prefer-dist
+    - composer install -q --no-ansi --no-interaction --no-scripts --no-progress --prefer-dist --ignore-platform-reqs
     - php artisan key:generate
     - chmod -R 777 storage bootstrap/cache
